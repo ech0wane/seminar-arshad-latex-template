@@ -1,0 +1,45 @@
+
+
+%------------------------ Algorithm ------------------------------------
+
+\newenvironment{الگوریتم}[2][H]
+	{\bigskip\bigskip\begin{algorithm}[#1]\caption{#2} \label{الگوریتم: #2}\vspace{0.5em}\begin{algorithmic}[1]}
+	{\end{algorithmic}\vspace{0.5em}\end{algorithm}\bigskip}
+	
+
+\renewcommand{\algorithmicfor}{{به ازای}}
+\renewcommand{\algorithmicwhile}{{تا وقتی}}
+\renewcommand{\algorithmicdo}{\hspace{-.2em}:}
+\renewcommand{\algorithmicif}{{اگر}}
+\renewcommand{\algorithmicthen}{\hspace{-.2em}:}
+\renewcommand{\algorithmicelse}{{در غیر این صورت:}}
+%\renewcommand{\algorithmicelsif}{{در غیر این صورت اگر: }}
+\renewcommand{\algorithmicreturn}{{برگردان}}
+\renewcommand{\algorithmiccomment}[1]{$\triangleleft$ \emph{#1}}
+\renewcommand{\algorithmicrequire}{\textbf{ورودی:}}
+\renewcommand{\algorithmicensure}{\textbf{خروجی:}}
+
+\begingroup
+\catcode`\^^^^200c=11
+\catcode`\^^^^200d=11
+
+\gdef\اگر{\If}
+\gdef\وگرنه{\Else}
+\gdef\وگر{\ElsIf}
+\gdef\پایان‌اگر{\EndIf}
+\gdef\پایاناگر{\EndIf}
+\gdef\به‌ازای{\For}
+\gdef\بهازای{\For}
+\gdef\پایان‌به‌ازای{\EndFor}
+\gdef\پایان‌بهازای{\EndFor}
+\gdef\پایانبهازای{\EndFor}
+\gdef\تاوقتی{\While}
+\gdef\پایان‌تاوقتی{\EndWhile}
+\gdef\پایانتاوقتی{\EndWhile}
+\gdef\دستور{\State}
+\gdef\دستورک{\Statex}
+\gdef\توضیحات{\Comment}
+\gdef\برگردان{\Return}
+\gdef\ورودی{\Require}
+\gdef\خروجی{\Ensure}
+\endgroup

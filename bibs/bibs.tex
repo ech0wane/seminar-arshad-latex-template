@@ -1,0 +1,15 @@
+
+% -------------------------------------------------------
+%  Bibliography
+% -------------------------------------------------------
+
+\clearpage
+\phantomsection
+\ifdefined\chapter
+  \addcontentsline{toc}{chapter}{مراجع}
+\else
+  \addcontentsline{toc}{section}{مراجع}
+\fi
+
+\bibliographystyle{ieeetr-fa}
+\bibliography{bibs/full,bibs/refs}

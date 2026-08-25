@@ -1,0 +1,58 @@
+# ==========================================
+# LaTeX / XeLaTeX Auxiliary and Build Files
+# ==========================================
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.dvi
+*.fdb_latexmk
+*.fls
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.ist
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex
+*.synctex.gz
+*.synctex(busy)
+*.toc
+*.vrb
+*.xdv
+
+# Subdirectory auxiliary files
+front/*.aux
+front/template/*.aux
+chapters/*.aux
+bibs/*.aux
+styles/*.aux
+
+# Backup and editor temp files
+*.bak
+*.bak[0-9]*
+*.sav
+*.swp
+*~
+*.orig
+
+# VS Code / IDE settings
+.vscode/*.log
+.vscode/*.history
+.idea/
+
+# OS generated files
+Thumbs.db
+[Dd]esktop.ini
+.DS_Store
+
+# Generated PDF (Uncomment if you do not want to track the output PDF in git)
+# *.pdf

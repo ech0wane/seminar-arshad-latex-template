@@ -1,0 +1,228 @@
+
+% -------------------------------------------------------
+%  Common Styles and Formattings
+% -------------------------------------------------------
+
+\usepackage{amssymb,amsmath}
+\usepackage[colorlinks,linkcolor=blue,citecolor=blue]{hyperref}
+\usepackage[usenames,dvipsnames]{pstricks}
+\usepackage{graphicx,subfigure,wrapfig}
+\usepackage{geometry}
+\usepackage[mathscr]{euscript}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage[figureposition=bottom,tableposition=top,font={small,bf},labelfont=bf]{caption}
+
+\usepackage{algorithmicx,algorithm}
+\usepackage{float}
+\usepackage[noend]{algpseudocode}
+\input{styles/alg-fa}
+
+% xepersian must be the last package loaded
+\usepackage[extrafootnotefeatures]{xepersian}
+
+
+% -------------------- Page Layout --------------------
+
+\geometry{margin=1in,bottom=1.1in,footskip=.4in}
+
+\renewcommand{\baselinestretch}{1.4}
+\linespread{1.6}
+\setlength{\parskip}{0.45em}
+
+
+% -------------------- Fonts --------------------
+\settextfont[Scale=1.17]{XB Niloofar}
+\setdigitfont[Scale=1.17]{XB Niloofar}
+\setlatintextfont[Scale=1.0]{Times New Roman}
+\defpersianfont\sayeh[Scale=1]{XB Kayhan Pook}
+
+
+% -------------------- Persian Localisation --------------------
+\begingroup
+\catcode`\^^^^200c=11
+\catcode`\^^^^200d=11
+
+% Environments
+\gdef\شروع#1{\begin{#1}}
+\gdef\پایان#1{\end{#1}}
+
+% Commands
+\gdef\فقره{\item}
+\gdef\شرح{\caption}
+\gdef\مرجع{\cite}
+\gdef\مراجع{\cite}
+\gdef\رجوع{\ref}
+\gdef\پانویس#1{\LTRfootnote{#1}}
+\gdef\پاورقی#1{\LTRfootnote{#1}}
+\gdef\زیرنویس#1{\RTLfootnote{#1}}
+\gdef\بدون‌تورفتگی{\noindent}
+\gdef\بدونتورفتگی{\noindent}
+\gdef\خط‌پر{\hline}
+\gdef\خطپر{\hline}
+\gdef\صفحه‌جدید{\newpage}
+\gdef\صفحهجدید{\newpage}
+\gdef\پرش‌بلند{\bigskip}
+\gdef\پرشبلند{\bigskip}
+\gdef\پرش‌کوتاه{\smallskip}
+\gdef\پرشکوتاه{\smallskip}
+
+\gdef\تنظیمازوسط{\centering}
+\gdef\تنظیم‌ازوسط{\centering}
+\gdef\وسطچین{\centering}
+\gdef\وسط‌چین{\centering}
+\gdef\سیاه{\textbf}
+
+\ifdefined\chapter
+	\gdef\فصل{\chapter}
+	\gdef\بخش{\section}
+	\gdef\زیربخش{\subsection}
+	\gdef\زیرزیربخش{\subsubsection}
+\else
+	\gdef\فصل{\section}
+	\gdef\بخش{\subsection}
+	\gdef\زیربخش{\subsubsection}
+	\gdef\زیرزیربخش{\paragraph}
+\fi
+\endgroup
+
+\newenvironment{فقرات}{\begin{itemize}}{\end{itemize}}
+\newenvironment{شمارش}{\begin{enumerate}}{\end{enumerate}}
+\newenvironment{لوح}[1][H]{\begin{table}[#1]}{\end{table}}
+\newenvironment{جدول}[1]{\begin{tabular}{#1}}{\end{tabular}}
+\newenvironment{شکل}[1][H]{\begin{figure}[#1]}{\end{figure}}
+\newenvironment{توصیف}{\begin{description}}{\end{description}}
+
+
+% -------------------- Styles --------------------
+
+
+\SepMark{-}
+\renewcommand{\labelitemi}{$\bullet$}
+
+
+
+% -------------------- Environments --------------------
+
+
+\ifdefined\chapter
+	\newtheorem{قضیه}{قضیه‌ی}[chapter]
+	\newtheorem{مسئله}{مسئله‌ی}[chapter]
+	\newtheorem{تعریف}{تعریف}[chapter]
+	\newtheorem{مثال}{مثال}[chapter]
+\else
+	\newtheorem{قضیه}{قضیه‌ی}[section]
+	\newtheorem{مسئله}{مسئله‌ی}[section]
+	\newtheorem{تعریف}{تعریف}[section]
+	\newtheorem{مثال}{مثال}[section]
+\fi
+
+\newtheorem{لم}[قضیه]{لم}
+\newtheorem{ادعا}[قضیه]{ادعای}
+\newtheorem{مشاهده}[قضیه]{مشاهده‌ی}
+\newtheorem{نتیجه}[قضیه]{نتیجه‌ی}
+
+
+\newenvironment{اثبات}
+	{\begin{trivlist}\item[\hskip\labelsep{\em اثبات.}]}
+	{\leavevmode\unskip\nobreak\quad\hspace*{\fill}{\ensuremath{{\square}}}\end{trivlist}}
+
+\newenvironment{alg}[2]
+	{\begin{latin}
+	\begin{algorithm}[H]\caption{#1}\label{algo:#2}\vspace{0.2em}\begin{algorithmic}[1]}
+	{\end{algorithmic}\vspace{0.2em}\end{algorithm}\end{latin}}
+
+
+% -------------------- Titles --------------------
+
+
+\renewcommand{\listfigurename}{فهرست شکل‌ها}
+\renewcommand{\listtablename}{فهرست جدول‌ها}
+\providecommand{\bibname}{}
+\providecommand{\refname}{}
+\renewcommand{\bibname}{\rl{{مراجع}\hfill}} 
+\renewcommand{\refname}{\rl{{مراجع}\hfill}} 
+
+
+% -------------------- Commands --------------------
+
+
+\newcommand{\IN}{\ensuremath{\mathbb{N}}} 
+\newcommand{\IZ}{\ensuremath{\mathbb{Z}}} 
+\newcommand{\IQ}{\ensuremath{\mathbb{Q}}} 
+\newcommand{\IR}{\ensuremath{\mathbb{R}}} 
+\newcommand{\IC}{\ensuremath{\mathbb{C}}} 
+
+\newcommand{\set}[1]{\left\{ #1 \right\}}
+\newcommand{\seq}[1]{\left< #1 \right>}
+\newcommand{\ceil}[1]{\left\lceil{#1}\right\rceil}
+\newcommand{\floor}[1]{\left\lfloor{#1}\right\rfloor}
+\newcommand{\card}[1]{\left|{#1}\right|}
+\newcommand{\setcomp}[1]{\overline{#1}}
+\newcommand{\provided}{\,:\,}
+\newcommand{\divs}{\mid}
+\newcommand{\ndivs}{\nmid}
+\newcommand{\iequiv}[1]{\,\overset{#1}{\equiv}\,}
+\newcommand{\imod}[1]{\allowbreak\mkern5mu(#1\,\,\text{پیمانه‌ی})}
+
+\newcommand{\poly}{\mathop{\mathrm{poly}}}
+\newcommand{\polylog}{\mathop{\mathrm{polylog}}}
+\newcommand{\eps}{\varepsilon}
+
+\newcommand{\lee}{\leqslant}
+\newcommand{\gee}{\geqslant}
+\renewcommand{\leq}{\lee}
+\renewcommand{\le}{\lee}
+\renewcommand{\geq}{\gee}
+\renewcommand{\ge}{\gee}
+
+\newcommand{\مهم}[1]{\textbf{#1}}
+\providecommand{\برچسب}{}
+\renewcommand{\برچسب}{\label}
+
+\newcommand{\REM}[1]{}
+\providecommand{\حذف}{}
+\renewcommand{\حذف}{\REM}
+\newcommand{\لر}{\lr}
+\newcommand{\کد}[1]{\lr{\tt #1}}
+
+
+
+% -------------------- Dictionary --------------------
+
+
+\newcommand{\dicalphabet}[1]{
+\begin{minipage}{\columnwidth}
+	\centerline{\noindent\textbf{\large #1 }}
+	\vspace{.5em}
+\end{minipage}
+\nopagebreak[4]
+}
+
+\newcommand{\dic}[2]{\noindent  #2 \dotfill  \lr{#1} \\ }
+
+
+% ------------------------------ Images and Figures --------------------------
+
+\graphicspath{{figs/}}
+\setlength{\intextsep}{0pt}  % for float boxes
+\providecommand{\psscalebox}[2][]{#2}
+
+\newcommand{\floatbox}[2]
+	{\begin{wrapfigure}{l}{#1}
+	\centering #2 \end{wrapfigure}}
+
+\newcommand{\centerfig}[2]
+	{\centering\scalebox{#2}{\input{figs/#1}}}
+
+\newcommand{\fig}[3]
+	{\floatbox{#3}{\centerfig{#1}{#2}}}
+
+\newcommand{\centerimg}[2]
+	{{\centering\includegraphics[width=#2]{figs/#1}\par}}
+
+\NewDocumentCommand{\img}{m m o}
+	{\begin{wrapfigure}{l}{\IfValueTF{#3}{#3}{#2}}
+	\centering\includegraphics[width=#2]{figs/#1}\end{wrapfigure}}
+
+
